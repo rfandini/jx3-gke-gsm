@@ -45,7 +45,7 @@ spec:
             - -archived-pipelineruns-url-template
             - gs://logs-jx3-rrezaf-cluster-81bf53f0f288/jenkins-x/pipelineruns/{{.Namespace}}/{{.Name}}.yaml
             - -pipeline-trace-url-template
-            - http://grafana-jx-observability.change.me/explore?left=%5B%22now%22,%22now%22,%22Tempo%22,%7B%22query%22:%22{{.TraceID}}%22%7D%5D
+            - http://grafana-jx-observability.35.187.231.149.nip.io/explore?left=%5B%22now%22,%22now%22,%22Tempo%22,%7B%22query%22:%22{{.TraceID}}%22%7D%5D
             - -log-level
             - INFO
           ports:
