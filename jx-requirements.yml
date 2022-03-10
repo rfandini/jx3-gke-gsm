@@ -5,28 +5,46 @@ spec:
     enabled: false
     schedule: ""
   cluster:
+    chartRepository: http://jenkins-x-chartmuseum.jx.svc.cluster.local:8080
+    clusterName: jx3-rrezaf-cluster
     devEnvApprovers:
     - todo
     environmentGitOwner: todo
     gitKind: github
     gitName: github
     gitServer: https://github.com
+    gke:
+      projectNumber: "398506542991"
     kanikoFlags: --skip-unused-stages --snapshotMode=redo
+    project: xl-devops
     provider: gke
     registry: gcr.io
+    zone: asia-southeast1-b
   environments:
   - key: dev
+    owner: rfandini
+    repository: jx3-gke-gsm
   - key: staging
   - key: production
   ingress:
-    domain: ""
-    externalDNS: false
+    domain: 35.187.231.149.nip.io
+    kind: ingress
     namespaceSubDomain: -jx.
     tls:
       email: ""
       enabled: false
-      production: false
+      production: true
+  kuberhealthy: true
+  pipelineUser:
+    username: rfandini
   repository: nexus
   secretStorage: gsm
+  storage:
+  - name: logs
+    url: gs://logs-jx3-rrezaf-cluster-81bf53f0f288
+  - name: reports
+    url: gs://reports-jx3-rrezaf-cluster-81bf53f0f288
+  - name: repository
+    url: gs://repository-jx3-rrezaf-cluster-81bf53f0f288
   vault: {}
   webhook: lighthouse
